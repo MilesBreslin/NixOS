@@ -1,9 +1,31 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix> ];
-  services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
+  imports = [
+    <nixpkgs/nixos/modules/profiles/base.nix>
+    <nixpkgs/nixos/modules/profiles/all-hardware.nix>
+  ];
+
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+    permitRootLogin = "yes";
+  };
+
+
+  documentation.enable = mkForce true;
+  documentation.nixos.enable = mkForce true;
+  services.nixosManual.showManual = true;
+
+  services.mingetty.autologinUser = "root";
+
+  networking.wireless.enable = mkDefault false;
+
+  security.sudo.enable = mkDefault false;
+
+  environment.variables.GC_INITIAL_HEAP_SIZE = "1G";
+
+  networking.firewall.logRefusedConnections = mkDefault false;
 
   environment.systemPackages =
     with pkgs;
@@ -18,7 +40,11 @@
     description = "Miles Breslin";
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keyFiles = [ ./miles.authorized_keys ];
+    hashedPassword = "*";
   };
 
-  users.users.root.openssh.authorizedKeys.keyFiles = [ ./root.authorized_keys ];
+  users.users.root = {
+    openssh.authorizedKeys.keyFiles = [ ./root.authorized_keys ];
+    hashedPassword = "*";
+  }
 }
