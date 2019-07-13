@@ -46,5 +46,5 @@
   users.users.root = {
     openssh.authorizedKeys.keyFiles = [ ./root.authorized_keys ];
     hashedPassword = "*";
-  }
+  };
 }
