@@ -16,7 +16,7 @@
     isNormalUser = true;
     home = "/home/miles";
     description = "Miles Breslin";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keyFiles = [ /etc/nixos/miles.authorized_keys ];
   };
 
