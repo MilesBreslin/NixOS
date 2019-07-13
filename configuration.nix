@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 with lib;
 
@@ -7,6 +7,11 @@ with lib;
     <nixpkgs/nixos/modules/profiles/base.nix>
     <nixpkgs/nixos/modules/profiles/all-hardware.nix>
   ];
+
+  fileSystems."/" =
+  { fsType = "tmpfs";
+    options = [ "mode=0755" ];
+  };
 
   services.openssh = {
     enable = true;
