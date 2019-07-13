@@ -9,6 +9,7 @@
     with pkgs;
     [
       git
+      tmux
     ];
 
   users.users.miles = {
