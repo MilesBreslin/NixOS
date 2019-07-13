@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+with lib;
+
 {
   imports = [
     <nixpkgs/nixos/modules/profiles/base.nix>
