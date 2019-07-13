@@ -13,6 +13,9 @@ with lib;
     options = [ "mode=0755" ];
   };
 
+  boot.loader.grub.enable = false;
+
+
   services.openssh = {
     enable = true;
     passwordAuthentication = false;
