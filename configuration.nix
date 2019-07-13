@@ -17,8 +17,8 @@
     home = "/home/miles";
     description = "Miles Breslin";
     extraGroups = [ "wheel" ];
-    openssh.authorizedKeys.keyFiles = [ /etc/nixos/miles.authorized_keys ];
+    openssh.authorizedKeys.keyFiles = [ ./miles.authorized_keys ];
   };
 
-  users.users.root.openssh.authorizedKeys.keyFiles = [ /etc/nixos/root.authorized_keys ];
+  users.users.root.openssh.authorizedKeys.keyFiles = [ ./root.authorized_keys ];
 }
