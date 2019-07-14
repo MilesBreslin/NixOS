@@ -23,7 +23,7 @@ with lib;
     displayManager.lightdm = {
       enable = true;
       autoLogin.enable = true;
-      autoLogin.user = "miles"
+      autoLogin.user = "miles";
     }
 
     desktopManager = {
