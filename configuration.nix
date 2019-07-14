@@ -20,7 +20,11 @@ with lib;
     enable = true;
     autorun = true;
 
-    displayManager.lightdm.enable = "none";
+    displayManager.lightdm = {
+      enable = true;
+      autoLogin.enable = true;
+      autoLogin.user = "miles"
+    }
 
     desktopManager = {
       default = "none";
