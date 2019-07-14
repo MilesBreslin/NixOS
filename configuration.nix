@@ -8,8 +8,8 @@ with lib;
     <nixpkgs/nixos/modules/profiles/all-hardware.nix>
   ];
 
-  fileSystems."/" =
-  { fsType = "tmpfs";
+  fileSystems."/" = {
+    fsType = "tmpfs";
     options = [ "mode=0755" ];
   };
 
