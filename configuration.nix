@@ -24,7 +24,7 @@ with lib;
       enable = true;
       autoLogin.enable = true;
       autoLogin.user = "miles";
-    }
+    };
 
     desktopManager = {
       default = "none";
