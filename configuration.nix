@@ -18,6 +18,9 @@ with lib;
 
   services.xserver = {
     enable = true;
+    autorun = true;
+
+    displayManager.default = "none";
 
     desktopManager = {
       default = "none";
