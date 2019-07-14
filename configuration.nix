@@ -21,7 +21,6 @@ with lib;
     autorun = true;
 
     displayManager.lightdm.enable = "none";
-    displayManager.xterm.enable = "none";
 
     desktopManager = {
       default = "none";
