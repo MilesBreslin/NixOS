@@ -20,7 +20,8 @@ with lib;
     enable = true;
     autorun = true;
 
-    displayManager.default = "none";
+    displayManager.lightdm.enable = "none";
+    displayManager.xterm.enable = "none";
 
     desktopManager = {
       default = "none";
